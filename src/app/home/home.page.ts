@@ -10,6 +10,7 @@ import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 export class HomePage {
 
   scanActive = false;
+  link: string;
 
   constructor() { }
 
@@ -36,8 +37,12 @@ export class HomePage {
 
       if (result.hasContent) {
         this.scanActive = false;
+        /* CÓDIGO ORIGINAL
         alert(result.content); //The QR content will come out here
         //Handle the data as your heart desires here
+        */
+       /* MEU CÓDIGO */
+       this.link = result.content;
       } else {
         alert('NO DATA FOUND!');
       }
